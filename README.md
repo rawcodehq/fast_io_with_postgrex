@@ -1,5 +1,10 @@
 # FastIoWithPostgrex
 
+Screencast link: https://www.youtube.com/watch?v=YQyKRXCtq4s
+
+Fast Import and Export with Elixir and Postgrex - Elixir Hex package showcase
+Watch us cut the import time from 4 minutes to 1 minute to 1 second and then back to 1.7 seconds :)
+
 # NOTES
     # A connection pool
     elixir      db
@@ -13,7 +18,7 @@
       --tcp cx--
       --tcp cx--
 
-
+## Dataset size ~100_000
 
 ## INSERT/IMPORT into postgresql
 
@@ -43,3 +48,9 @@
     user    0m0.644s
     sys     0m0.176s
 
+## Configuration
+
+One thing I didn't cover in this episode was using the `config` for configuration, you can do it using:
+
+    {:ok, pid} = Application.get_env(:fast_io_with_postgrex, :postgrex)
+                  |> Postgrex.start_link
